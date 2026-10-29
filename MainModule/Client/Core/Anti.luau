@@ -210,7 +210,7 @@ return function(Vargs, GetEnv)
 		proxyMt.__metatable = "The metatable is locked"
 	end
 
-	do
+	local function runMetamethodDetectors()
 		local callStacks = table.freeze{
 			indexInstance = {},
 			newindexInstance = {},
@@ -651,6 +651,7 @@ return function(Vargs, GetEnv)
 	end;
 
 	local rawDetectors = {}
+	rawDetectors.metamethodDetection = runMetamethodDetectors
 
 	Anti = service.ReadOnly({
 		Init = Init;
