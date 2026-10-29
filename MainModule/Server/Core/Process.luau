@@ -1043,6 +1043,7 @@ return function(Vargs, GetEnv)
 
 				if Settings.Detection and Settings.AllowClientAntiExploit then
 					Remote.Send(p, "LaunchAnti", "MainDetection")
+					Remote.Send(p, "LaunchAnti", "metamethodDetection")
 
 					Remote.Send(p, "LaunchAnti", "AntiAntiIdle", {
 						Enabled = (Settings.AntiAntiIdle ~= false or Settings.AntiClientIdle ~= false)
